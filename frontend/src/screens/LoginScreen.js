@@ -34,7 +34,7 @@ const LoginScreen = () => {
         </Col>
       </Row>
       <Row className='py-2'>
-        <Col>Adding feature to reset password.</Col>
+        <Col>Forgot password? Reset here!</Col>
       </Row>
     </FormContainer>
   )

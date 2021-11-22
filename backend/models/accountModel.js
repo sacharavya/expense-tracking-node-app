@@ -3,6 +3,11 @@ const typeSchema = mongoose.Schema({
   name: { type: String, Required: true },
 })
 const accountSchema = mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User',
+  },
   name: { type: String, required: true },
   number: { type: Number, required: true, default: 0 },
   type: { typeSchema },

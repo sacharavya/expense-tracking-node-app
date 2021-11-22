@@ -4,11 +4,14 @@ import morgan from 'morgan'
 
 import connectDB from './config/db.js'
 
+import userRoutes from './routes/userRoutes.js'
+
 dotenv.config()
 
 connectDB()
 
 const app = express()
+app.use(express.json())
 
 if (process.env.NODE_ENV == 'development') {
   app.use(morgan('dev'))
@@ -16,12 +19,12 @@ if (process.env.NODE_ENV == 'development') {
 
 app.use(express.json())
 
-app.get('/api/users')
-app.get('/api/accounts')
-
 app.get('/', (req, res) => {
   res.send('API is running....')
 })
+
+app.use('/api/users', userRoutes)
+// app.use('/api/accounts')
 
 //Port is used to get the port for desirable port when deploying the app in the web
 const port = process.env.PORT || 5000
