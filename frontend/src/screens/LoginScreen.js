@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, withRouter } from 'react-router-dom'
 import { Form, Col, Row, Button } from 'react-bootstrap'
 
 import Message from '../components/Message'
@@ -28,7 +28,7 @@ const LoginScreen = ({ history }) => {
 
   useEffect(() => {
     if (userInfo) {
-      // history.push(redirect)
+      // history.push('/dashboard')
       console.log('Nice')
       console.log(userInfo)
     }

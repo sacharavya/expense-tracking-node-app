@@ -5,10 +5,6 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 /*
- *Import ...
- */
-
-/*
  *Import components here
  */
 import Header from './components/Header'
